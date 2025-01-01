@@ -15,7 +15,7 @@ const ContactUs = () => {
           </div>
           <div className="contact-option">
             <FaEnvelope className="contact-icon" />
-            <p>Email us: info@sakakeja.com</p>
+            <p>Email us: info@aallp.com</p>
           </div>
           <div className="contact-option">
             <FaWhatsapp className="contact-icon" />

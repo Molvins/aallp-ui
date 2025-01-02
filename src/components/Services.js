@@ -1,34 +1,30 @@
-import React, { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import React from "react";
 
 const Services = () => {
-  const [services, setServices] = useState([]);
-  const location = useLocation();
-  const selectedService = location.state?.service;
-
-  useEffect(() => {
-    const fetchServicesData = async () => {
-      const response = await fetch('https://aallp-server.onrender.com/services');
-      const data = await response.json();
-      setServices(data);
-    };
-
-    fetchServicesData();
-  }, []);
-
   return (
-    <div className="services-container">
-      <h1>Our Services</h1>
-      {selectedService && <h2>{selectedService}</h2>}
-      <div className="services-grid">
-        {services.map((service) => (
-          <div key={service.id} className="service-card">
-            <h2>{service.name}</h2>
-            <p>{service.description}</p>
-          </div>
-        ))}
+    <section id="services" className="services-container">
+      <h2 className="section-heading">Our Services</h2>
+      <div className="services-list">
+        <div className="service-item">
+          <h3>Corporate Law</h3>
+          <p>
+            Our Corporate Law services help businesses navigate the complexities of the legal landscape. From company formation and compliance to mergers and acquisitions, our experienced attorneys provide strategic guidance to ensure your business thrives.
+          </p>
+        </div>
+        <div className="service-item">
+          <h3>Family Law</h3>
+          <p>
+            We understand that family matters require a compassionate approach. Our Family Law practice specializes in divorce, custody arrangements, spousal support, and more. We are committed to protecting your rights and providing support during challenging times.
+          </p>
+        </div>
+        <div className="service-item">
+          <h3>Estate Planning</h3>
+          <p>
+            Ensure your legacy is preserved with our comprehensive Estate Planning services. From drafting wills and trusts to navigating tax implications, we work closely with you to secure your family's future and provide peace of mind.
+          </p>
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 

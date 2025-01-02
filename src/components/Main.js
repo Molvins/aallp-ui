@@ -1,8 +1,8 @@
 import React from 'react';
 import Header from './Header';
-import Services from './Services';
+
 import About from './About'
-import Blog from './Blog';
+
 import Contact from './Contact';
 import Footer from './Footer';
 

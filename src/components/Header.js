@@ -1,13 +1,20 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import logo from "../images/Logo.PNG";
-
+import logo from "../images/logo.PNG";
+import "./App.css";
 
 const Header = () => {
   const [showDropdown, setShowDropdown] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
 
   const toggleDropdown = () => {
     setShowDropdown(!showDropdown);
+  };
+
+  const handleSearch = (event) => {
+    event.preventDefault();
+    console.log("Search query:", searchQuery);
+    // Add your search logic here
   };
 
   return (
@@ -31,6 +38,16 @@ const Header = () => {
           <Link to="/about" className="nav-link">About</Link>
           <Link to="/contact" className="nav-link">Contact</Link>
         </nav>
+        <form className="search-bar" onSubmit={handleSearch}>
+          <input
+            type="text"
+            placeholder="Search..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            className="search-input"
+          />
+          <button type="submit" className="search-button">Search</button>
+        </form>
       </div>
     </header>
   );

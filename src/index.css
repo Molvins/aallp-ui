@@ -15,43 +15,85 @@ code {
 .header {
   position: fixed;
   top: 0;
-  left: 0;
   width: 100%;
-  background-color: #ffffff;
+  background-color: white;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   z-index: 1000;
 }
 
+/* Header styles */
 .header-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  max-width: 1200px;
-  margin: 0 auto;
 }
 
 .logo {
   height: 50px;
+  cursor: pointer;
+}
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
 }
 
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  transition: transform 0.3s ease;
+}
+  
+
+/* Navigation styles */
 .nav {
-  display: flex;
-  gap: 20px;
-  align-items: center;
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  border-radius: 4px;
+  z-index: 1000;
 }
-
 .nav-link {
   text-decoration: none;
   color: #333;
-  font-weight: bold;
+  font-size: 1rem;
   transition: color 0.3s ease;
 }
 
 .nav-link:hover {
   color: #007bff;
 }
+/* Mobile styles */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
 
+  .nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    border-radius: 4px;
+    z-index: 1000;
+  }
+
+  .nav-active {
+    display: flex;
+  }
+}
 /* Dropdown menu */
 .dropdown {
   position: relative;
@@ -78,16 +120,15 @@ code {
 }
 
 .dropdown-item {
-  display: block;
-  padding: 10px 20px;
-  color: #333;
   text-decoration: none;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  color: #333;
+  display: block;
+  padding: 5px 10px;
+  transition: background-color 0.3s ease;
 }
 
 .dropdown-item:hover {
-  background-color: #f1f1f1;
-  color: #007bff;
+  background-color: #f5f5f5;
 }
 
 /* Responsive design */

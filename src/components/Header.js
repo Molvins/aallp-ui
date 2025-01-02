@@ -1,53 +1,45 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import "../App.css";
 import logo from "../images/logo.PNG";
-import "./App.css";
 
 const Header = () => {
-  const [showDropdown, setShowDropdown] = useState(false);
-  const [searchQuery, setSearchQuery] = useState("");
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const toggleDropdown = () => {
-    setShowDropdown(!showDropdown);
-  };
-
-  const handleSearch = (event) => {
-    event.preventDefault();
-    console.log("Search query:", searchQuery);
-    // Add your search logic here
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
   };
 
   return (
     <header className="header">
       <div className="header-container">
-        <img src={logo} alt="Logo" className="logo" />
-        <nav className="nav">
-          <Link to="/" className="nav-link">Home</Link>
-          <div className="nav-link dropdown">
-            <button className="dropdown-toggle" onClick={toggleDropdown}>
-              Services
-            </button>
-            {showDropdown && (
-              <div className="dropdown-menu">
-                <Link to="/services#corporate-law" className="dropdown-item">Corporate Law</Link>
-                <Link to="/services#family-law" className="dropdown-item">Family Law</Link>
-                <Link to="/services#estate-planning" className="dropdown-item">Estate Planning</Link>
-              </div>
-            )}
-          </div>
-          <Link to="/about" className="nav-link">About</Link>
-          <Link to="/contact" className="nav-link">Contact</Link>
+        {/* Logo */}
+        <Link to="/">
+          <img src={logo} alt="Logo" className="logo" />
+        </Link>
+
+        {/* Hamburger Icon */}
+        <div className="hamburger" onClick={toggleMenu}>
+          <span className="bar"></span>
+          <span className="bar"></span>
+          <span className="bar"></span>
+        </div>
+
+        {/* Navigation Links */}
+        <nav className={`nav ${isMenuOpen ? "nav-active" : ""}`}>
+          <Link to="/" className="nav-link" onClick={() => setIsMenuOpen(false)}>
+            Home
+          </Link>
+          <Link to="/services" className="nav-link" onClick={() => setIsMenuOpen(false)}>
+            Services
+          </Link>
+          <Link to="/about" className="nav-link" onClick={() => setIsMenuOpen(false)}>
+            About
+          </Link>
+          <Link to="/contact" className="nav-link" onClick={() => setIsMenuOpen(false)}>
+            Contact
+          </Link>
         </nav>
-        <form className="search-bar" onSubmit={handleSearch}>
-          <input
-            type="text"
-            placeholder="Search..."
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            className="search-input"
-          />
-          <button type="submit" className="search-button">Search</button>
-        </form>
       </div>
     </header>
   );

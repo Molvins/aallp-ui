@@ -18,10 +18,8 @@ const Header = () => {
         </Link>
 
         {/* Hamburger Icon */}
-        <div className="hamburger" onClick={toggleMenu}>
-          <span className="bar"></span>
-          <span className="bar"></span>
-          <span className="bar"></span>
+        <div className="hamburger-icon" onClick={toggleMenu}>
+          <i className={`fas ${isMenuOpen ? "fa-times" : "fa-bars"}`}></i>
         </div>
 
         {/* Navigation Links */}

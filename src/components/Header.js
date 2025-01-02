@@ -7,7 +7,7 @@ const Header = () => {
 
   const handleServiceClick = (service) => {
     navigate('/services', { state: { service } }); // Pass selected service as state
-    setIsDropdownOpen(false); // Close the dropdown
+    setIsDropdownOpen(false); 
   };
 
   return (

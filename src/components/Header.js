@@ -1,39 +1,37 @@
-import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import logo from "../images/logo.PNG";
+
 
 const Header = () => {
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const navigate = useNavigate();
+  const [showDropdown, setShowDropdown] = useState(false);
 
-  const handleServiceClick = (service) => {
-    navigate('/services', { state: { service } }); // Pass selected service as state
-    setIsDropdownOpen(false); 
+  const toggleDropdown = () => {
+    setShowDropdown(!showDropdown);
   };
 
   return (
     <header className="header">
-      <h1>Auka & Associates</h1>
-      <nav className="nav">
-        <Link to="/" className="nav-link">Home</Link>
-        <Link to="/about" className="nav-link">About</Link>
-        <div className="dropdown">
-          <button
-            className="nav-link dropdown-toggle"
-            onClick={() => setIsDropdownOpen((prev) => !prev)}
-          >
-            Services
-          </button>
-          {isDropdownOpen && (
-            <div className="dropdown-menu">
-              <button onClick={() => handleServiceClick('Corporate Law')}>Corporate Law</button>
-              <button onClick={() => handleServiceClick('Family Law')}>Family Law</button>
-              <button onClick={() => handleServiceClick('Estate Planning')}>Estate Planning</button>
-            </div>
-          )}
-        </div>
-        <Link to="/blog" className="nav-link">Blog</Link>
-        <Link to="/contact" className="nav-link">Contact</Link>
-      </nav>
+      <div className="header-container">
+        <img src={logo} alt="Logo" className="logo" />
+        <nav className="nav">
+          <Link to="/" className="nav-link">Home</Link>
+          <div className="nav-link dropdown">
+            <button className="dropdown-toggle" onClick={toggleDropdown}>
+              Services
+            </button>
+            {showDropdown && (
+              <div className="dropdown-menu">
+                <Link to="/services#corporate-law" className="dropdown-item">Corporate Law</Link>
+                <Link to="/services#family-law" className="dropdown-item">Family Law</Link>
+                <Link to="/services#estate-planning" className="dropdown-item">Estate Planning</Link>
+              </div>
+            )}
+          </div>
+          <Link to="/about" className="nav-link">About</Link>
+          <Link to="/contact" className="nav-link">Contact</Link>
+        </nav>
+      </div>
     </header>
   );
 };

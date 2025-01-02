@@ -30,17 +30,125 @@ p {
 }
 
 /* Header */
-.header-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: #f8f9fa; /* Or your preferred background color */
-  z-index: 1000; /* Ensures the header stays above other elements */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  color: white;
   padding: 10px 20px;
 }
 
+.nav {
+  display: flex;
+  gap: 15px;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  position: relative;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-toggle {
+  background: none;
+  border: none;
+  color: white;
+  font-size: inherit;
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+  z-index: 1000;
+}
+
+.dropdown-menu button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.dropdown-menu button:hover {
+  background-color: #f0f0f0;
+}
+
+/* General team container styles */
+.team-container {
+  text-align: center;
+  padding: 20px;
+}
+
+/* Heading style */
+.team-heading {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Grid for team cards */
+.team-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* Team card styling */
+.team-card {
+  width: 200px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.team-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Team member image styling */
+.team-image {
+  width: 100%;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+/* Team member name styling */
+.team-name {
+  font-size: 1.2rem;
+  margin: 10px 0;
+  color: #222;
+}
+
+/* Team member role styling */
+.team-role {
+  font-size: 1rem;
+  color: #555;
+}
+  
 body {
   margin-top: 80px; /* Adjust based on the header's height to avoid content overlap */
 }
@@ -110,35 +218,30 @@ body {
 /* Services Section */
 .services-container {
   padding: 60px 20px;
+  text-align: center;
   background-color: #e6f2ff;
 }
 
-.section-heading {
-  text-align: center;
-  color: #003366;
-  margin-bottom: 30px;
-}
-
-.services-list {
-  display: flex;
-  flex-wrap: wrap;
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
-  justify-content: center;
+  margin-top: 20px;
 }
 
-.service-item {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 8px;
+.service-card {
+  background-color: #f9f9f9;
+  border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  flex: 1;
-  max-width: 300px;
+  overflow: hidden;
+  padding: 20px;
   text-align: center;
 }
 
-.service-item h3 {
-  color: #003366;
-  margin-bottom: 10px;
+.service-description {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.5;
 }
 
 /* Blog Section */

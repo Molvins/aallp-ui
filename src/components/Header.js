@@ -1,27 +1,39 @@
-import React from "react";
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Header = () => {
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const navigate = useNavigate();
+
+  const handleServiceClick = (service) => {
+    navigate('/services', { state: { service } }); // Pass selected service as state
+    setIsDropdownOpen(false); // Close the dropdown
+  };
+
   return (
-    <header className="header-container">
-      <div className="logo">
-        <img src="/path-to-your-logo/logo.png" alt="Auka & Associates" />
-      </div>
-      <nav className="nav-links">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#team">Team</a>
-        <a href="#blog">Blog</a>
-        <a href="#services">Services</a>
-        <a href="#contact">Contact</a>
+    <header className="header">
+      <h1>Your Firm Name</h1>
+      <nav className="nav">
+        <Link to="/" className="nav-link">Home</Link>
+        <Link to="/about" className="nav-link">About</Link>
+        <div className="dropdown">
+          <button
+            className="nav-link dropdown-toggle"
+            onClick={() => setIsDropdownOpen((prev) => !prev)}
+          >
+            Services
+          </button>
+          {isDropdownOpen && (
+            <div className="dropdown-menu">
+              <button onClick={() => handleServiceClick('Corporate Law')}>Corporate Law</button>
+              <button onClick={() => handleServiceClick('Family Law')}>Family Law</button>
+              <button onClick={() => handleServiceClick('Estate Planning')}>Estate Planning</button>
+            </div>
+          )}
+        </div>
+        <Link to="/blog" className="nav-link">Blog</Link>
+        <Link to="/contact" className="nav-link">Contact</Link>
       </nav>
-      <div className="search-bar">
-        <input
-          type="text"
-          placeholder="Search..."
-          aria-label="Search"
-        />
-        <button type="submit">Search</button>
-      </div>
     </header>
   );
 };

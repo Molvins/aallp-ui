@@ -17,12 +17,7 @@ const Main = () => {
       <div className='AboutU'>
         <About />
       </div>
-      <div className='Services'>
-      <Services />
-      </div>
-      <div className='Blog'>
-      <Blog />
-      </div>
+
       <div className='Contact'>
       <Contact />
       </div>

@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import './index.css'; // Assuming your styles are in App.css
-
 const Team = () => {
   const [teamMembers, setTeamMembers] = useState([]);
   const [loading, setLoading] = useState(true);

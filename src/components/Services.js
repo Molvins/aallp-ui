@@ -1,5 +1,5 @@
 import React from "react";
-import CorporateImage from "./images/Corporate.jpg";
+import CorporateImage from "./images/corporate.jpg";
 import FamilyImage from "./images/family.jpg";
 import EstatePlanningImage from "./images/estate planning.jpg";
 

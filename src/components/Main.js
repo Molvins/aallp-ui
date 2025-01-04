@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from './Header';
-
+import Team from './Team'
 import About from './About'
 
 import Contact from './Contact';
@@ -17,7 +17,9 @@ const Main = () => {
       <div className='AboutU'>
         <About />
       </div>
-
+      <div className='Team'>
+        <Team />    
+      </div>
       <div className='Contact'>
       <Contact />
       </div>

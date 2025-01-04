@@ -347,11 +347,11 @@ body {
 
 /* About Section */
 .about-us {
-  background-image: url("../images/Home.jpg");
+  background-image: url("../src/images/Home.jpg");
   background-size: cover;
   background-position: center;
   padding: 4rem 2rem;
-  color: #333; /* Ensure text is readable over the background */
+  color: #333; 
 }
 
 .about-container {

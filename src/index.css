@@ -34,7 +34,7 @@ code {
 
 /* Logo styling */
 .logo {
-  max-height: 50px;
+  max-height: 60px;
   width: auto;
 }
 
@@ -85,7 +85,7 @@ code {
   }
 
   .logo {
-    margin-bottom: 10px; /* Add spacing for logo when stacked */
+    margin-bottom: 30px; /* Add spacing for logo when stacked */
   }
 
   .nav {
@@ -176,7 +176,7 @@ code {
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: #ffffff;
+  background-color: #10c7e7;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   border-radius: 4px;
   overflow: hidden;
@@ -281,7 +281,7 @@ p {
 .dropdown-toggle {
   background: none;
   border: none;
-  color: white;
+  color: #10c7e7;
   font-size: inherit;
   cursor: pointer;
 }
@@ -290,7 +290,7 @@ p {
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: white;
+  background-color: #10c7e7;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   border-radius: 4px;
   overflow: hidden;
@@ -309,7 +309,7 @@ p {
 }
 
 .dropdown-menu button:hover {
-  background-color: #f0f0f0;
+  background-color: #10c7e7;
 }
 
 /* General team container styles */
@@ -430,8 +430,9 @@ body {
 }
 
 .about-text h4 {
-  font-size: 1.2rem;
+  font-size: 3.2rem;
   margin-bottom: 1rem;
+  justify-content: center;
 }
 
 .about-text h2 {
@@ -606,7 +607,7 @@ body {
 
 .contact-form button {
   padding: 10px 15px;
-  background-color: #003366;
+  background-color: #f0f2f3;
   color: #fff;
   border: none;
   border-radius: 4px;
@@ -614,12 +615,12 @@ body {
 }
 
 .contact-form button:hover {
-  background-color: #002244;
+  background-color: #f0f2f3;
 }
 
 /* Footer */
 .footer-container {
-  background-color: #0965cf;
+  background-color: #333;
   color: #fff;
   padding: 20px;
   display: flex;

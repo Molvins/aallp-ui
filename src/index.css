@@ -94,6 +94,7 @@ code {
   }
 
   .nav-link {
+    color: #333;
     display: block;
     margin: 5px 0;
   }

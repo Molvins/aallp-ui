@@ -16,9 +16,6 @@ const Footer = () => {
     <footer className="footer-container">
       <div className="footer-section">
         <div className="social-icons">
-          <div className="eco-icon">
-            <FaHome /> Auka & Associates LLP
-          </div>
           <div className="social-links">
             <FaFacebook />
             <FaLinkedin />
@@ -26,7 +23,9 @@ const Footer = () => {
             <FaInstagram />
           </div>
           <div className="contact-button">
-            <button>Contact Us</button>
+            <Link to="/contact">
+              <button>Contact Us</button>
+            </Link>
           </div>
         </div>
       </div>
@@ -56,9 +55,12 @@ const Footer = () => {
       <div className="footer-section">
         <ul className="footer-list">
           <li className="Nav">Company</li>
-          <li>About Us</li>
-          <li>Our Mission</li>
-          <li>Our Team</li>
+          <li>
+            <Link to="/about">About Us</Link>
+          </li>
+          <li>
+            <Link to="/team">Our Team</Link>
+          </li>
         </ul>
       </div>
       <div className="footer-section">

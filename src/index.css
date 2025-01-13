@@ -44,6 +44,11 @@ body {
   font-size: 24px;
   cursor: pointer;
   color: white;
+  position: absolute;
+  right: 20px; /* Move it to the right side */
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1001;
 }
 
 .nav {
@@ -84,11 +89,6 @@ body {
   border: 2px solid #007bff;
 }
 
-/* Prevent content from being hidden under the fixed header */
-body {
-  padding-top: 60px; /* Adjust to header height */
-}
-
 /* Mobile adjustments */
 @media (max-width: 768px) {
   body {
@@ -97,14 +97,6 @@ body {
 
   .hamburger-icon {
     display: block;
-    font-size: 30px;
-    cursor: pointer;
-    color: white;
-    position: absolute;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 1001;
   }
 
   .nav {
@@ -148,11 +140,6 @@ body {
 
   .about-container, .services-list {
     width: 100%;
-  }
-
-  .header, .hamburger-icon {
-    left: 0;
-    right: 0;
   }
 }
 

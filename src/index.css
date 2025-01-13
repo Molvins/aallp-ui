@@ -420,6 +420,34 @@ body {
 .blog-read-more:hover {
   color: #cc5200;
 }
+/* General Image Styling */
+.responsive-image {
+  width: 100%; /* Ensures the image takes up the full width of its container */
+  height: auto; /* Maintains aspect ratio */
+  max-width: 600px; /* Optional: limits max width */
+  margin: 0 auto; /* Centers the image */
+}
+
+/* Media Query for Small Screens */
+@media (max-width: 768px) {
+  .blog-post {
+    flex-direction: column; /* Stacks the content vertically */
+    text-align: center; /* Centers text */
+  }
+
+  .blog-post-image {
+    width: 100%;
+    padding: 10px; /* Adds padding around the image */
+  }
+  
+  .blog-post-content {
+    padding: 20px;
+  }
+
+  .blog-read-more {
+    margin-top: 20px;
+  }
+}
 
 /* Contact Section */
 .contact-us-container {

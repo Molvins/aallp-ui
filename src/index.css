@@ -29,15 +29,17 @@ body, ul, nav {
   box-sizing: border-box;
 }
 
+/* Fixed Header */
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
   background-color: #333;
   color: white;
-  position: relative;
-  z-index: 10;
+  padding: 10px 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 .header-container {
@@ -97,6 +99,11 @@ body, ul, nav {
   border: 2px solid #007bff;
 }
 
+/* Ensure Content Doesn't Overlap Header */
+body {
+  padding-top: 60px; /* Adjust to header height */
+}
+
 /* Small Screens */
 @media (max-width: 768px) {
   .hamburger-icon {
@@ -116,7 +123,6 @@ body, ul, nav {
     align-items: flex-start;
     padding: 20px;
     transition: left 0.3s ease;
-    z-index: 1000;
   }
 
   .nav-active {
@@ -135,14 +141,11 @@ body, ul, nav {
     background-color: #575757;
   }
 
-  .header-container {
-    justify-content: space-between;
-  }
-
   .search-container {
     display: none;
   }
 }
+
 
 /* General team container styles */
 .team-container {

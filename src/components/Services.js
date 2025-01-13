@@ -3,6 +3,7 @@ import Header from './Header';
 import CorporateImage from "../images/corporate.jpg";
 import FamilyImage from "../images/family.jpg";
 import EstatePlanningImage from "../images/estate planning.jpg";
+import Footer from './Footer';
 
 const servicesData = [
   {
@@ -46,6 +47,7 @@ const Services = () => {
         ))}
       </div>
     </section>
+    <Footer />
     </div>
   );
 };

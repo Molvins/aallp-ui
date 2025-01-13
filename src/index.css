@@ -48,6 +48,8 @@ body, ul, nav {
   align-items: center;
   width: 100%;
   position: relative; 
+  padding: 0 20px; /* Add padding for some space around the content */
+
 
 }
 

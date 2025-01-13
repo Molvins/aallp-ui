@@ -25,6 +25,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 60px; /* Set a fixed height for the header */
 }
 
 .header-container {
@@ -86,13 +87,14 @@ body {
 
 /* Prevent content from being hidden under the fixed header */
 body {
-  padding-top: 60px; /* Adjust to header height */
+  padding-top: 60px; /* Adjust this based on the header height */
 }
 
 /* Mobile adjustments */
 @media (max-width: 768px) {
   body {
     overflow-x: hidden; /* Prevent horizontal overflow */
+    padding-top: 70px; /* Ensure top content isn't covered by header on small screens */
   }
 
   .hamburger-icon {
@@ -155,6 +157,7 @@ body {
     right: 0;
   }
 }
+
 
 .team-container {
   text-align: center;

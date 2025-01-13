@@ -1,54 +1,30 @@
 import React from "react";
-import {
-  FaHome,
-  FaBuilding,
-  FaMapMarkerAlt,
-  FaNewspaper,
-  FaFacebook,
-  FaLinkedin,
-  FaTwitter,
-  FaInstagram,
-} from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { FaHome, FaBuilding, FaMapMarkerAlt, FaNewspaper } from "react-icons/fa";
+import { Link, NavLink } from "react-router-dom";
 
 const Footer = () => {
   return (
     <footer className="footer-container">
       <div className="footer-section">
-        <div className="social-icons">
-          <div className="social-links">
-            <FaFacebook />
-            <FaLinkedin />
-            <FaTwitter />
-            <FaInstagram />
-          </div>
-          <div className="contact-button">
-            <Link to="/contact">
-              <button>Contact Us</button>
-            </Link>
-          </div>
-        </div>
-      </div>
-      <div className="footer-section">
         <ul className="footer-list">
           <li className="Nav">Navigation</li>
           <li>
-            <Link to="/">
+            <NavLink to="/" aria-label="Home">
               <FaHome /> Home
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link to="/about">
+            <NavLink to="/about" aria-label="Our Company">
               <FaBuilding /> Our Company
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <FaMapMarkerAlt /> Location
+            <FaMapMarkerAlt aria-hidden="true" /> Location
           </li>
           <li>
-            <Link to="/blog">
+            <NavLink to="/blog" aria-label="Blog">
               <FaNewspaper /> Blog
-            </Link>
+            </NavLink>
           </li>
         </ul>
       </div>
@@ -56,17 +32,24 @@ const Footer = () => {
         <ul className="footer-list">
           <li className="Nav">Company</li>
           <li>
-            <Link to="/about">About Us</Link>
+            <NavLink to="/about" aria-label="About Us">About Us</NavLink>
           </li>
           <li>
-            <Link to="/team">Our Team</Link>
+            <NavLink to="/team" aria-label="Our Team">Our Team</NavLink>
+          </li>
+          <li>
+            <NavLink to="/contact" aria-label="Contact Us">Contact Us</NavLink>
           </li>
         </ul>
       </div>
       <div className="footer-section">
         <ul className="footer-list">
           <li className="Nav">Support</li>
-          <li>+254710203050</li>
+          <li>
+            <a href="tel:+254710203050" aria-label="Call Support">
+              +254 710 203 050
+            </a>
+          </li>
         </ul>
       </div>
     </footer>
@@ -74,3 +57,4 @@ const Footer = () => {
 };
 
 export default Footer;
+  

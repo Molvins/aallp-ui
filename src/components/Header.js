@@ -53,8 +53,7 @@ const Header = () => {
             About
           </Link>
           <Link to="/contact" className="nav-link" onClick={() => setIsMenuOpen(false)}>
-            Contact
-          </Link>
+            Contact Us
         </nav>
 
         {/* Search Bar */}

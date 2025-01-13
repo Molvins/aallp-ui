@@ -5,8 +5,7 @@ import Footer from "./Footer";
 
 const About = () => {
   return (
-    <div className="app-container">
-      <Header />
+    
     <section
       className="about-us"
       style={{
@@ -72,8 +71,6 @@ const About = () => {
         </div>
       </div>
     </section>
-    <Footer />
-    </div>
   );
 };
 

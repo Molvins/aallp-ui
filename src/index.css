@@ -21,8 +21,7 @@ body {
   z-index: 1000;
   background-color: #333;
   color: white;
-  padding: 5px 20px; /* Reduced padding */
-  height: 50px; /* Reduced height */
+  padding: 10px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -36,9 +35,8 @@ body {
 }
 
 .logo {
-  max-width: 120px; /* Adjust logo size for smaller header */
+  max-width: 150px;
   height: auto;
-  width: auto; /* Ensure the logo scales correctly */
 }
 
 .hamburger-icon {
@@ -46,11 +44,6 @@ body {
   font-size: 24px;
   cursor: pointer;
   color: white;
-  position: absolute;
-  right: 20px;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 1001;
 }
 
 .nav {
@@ -91,14 +84,27 @@ body {
   border: 2px solid #007bff;
 }
 
+/* Prevent content from being hidden under the fixed header */
+body {
+  padding-top: 60px; /* Adjust to header height */
+}
+
 /* Mobile adjustments */
 @media (max-width: 768px) {
   body {
-    overflow-x: hidden;
+    overflow-x: hidden; /* Prevent horizontal overflow */
   }
 
   .hamburger-icon {
     display: block;
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1001;
   }
 
   .nav {
@@ -137,21 +143,18 @@ body {
   }
 
   .logo {
-    max-width: 100px; /* Adjust logo size for mobile */
-    height: auto;
+    max-width: 120px; /* Adjust logo for smaller screens */
   }
 
   .about-container, .services-list {
     width: 100%;
   }
+
+  .header, .hamburger-icon {
+    left: 0;
+    right: 0;
+  }
 }
-
-/* Adjust body padding to fit the new header height */
-body {
-  padding-top: 60px; /* Adjust based on header height */
-}
-
-
 
 .team-container {
   text-align: center;

@@ -20,9 +20,6 @@ const Main = () => {
       <div className='Team'>
         <Team />    
       </div>
-      <div className='Contact'>
-      <Contact />
-      </div>
       <div>
         <Footer />
       </div>

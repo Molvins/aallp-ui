@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import logo from "../images/logo.PNG";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
+  const menuRef = useRef(null);
 
   const toggleMenu = () => {
     setIsMenuOpen((prev) => !prev);
@@ -13,6 +14,19 @@ const Header = () => {
   const handleSearchChange = (e) => {
     setSearchQuery(e.target.value);
   };
+
+  // Close menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (menuRef.current && !menuRef.current.contains(e.target)) {
+        setIsMenuOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   return (
     <header className="header">
@@ -23,12 +37,12 @@ const Header = () => {
         </Link>
 
         {/* Hamburger Icon */}
-        <div className="hamburger-icon" onClick={toggleMenu}>
+        <div className="hamburger-icon" onClick={toggleMenu} aria-label="Toggle menu">
           <i className={`fas ${isMenuOpen ? "fa-times" : "fa-bars"}`}></i>
         </div>
 
         {/* Navigation Links */}
-        <nav className={`nav ${isMenuOpen ? "nav-active" : ""}`}>
+        <nav ref={menuRef} className={`nav ${isMenuOpen ? "nav-active" : ""}`}>
           <Link to="/" className="nav-link" onClick={() => setIsMenuOpen(false)}>
             Home
           </Link>
@@ -45,13 +59,16 @@ const Header = () => {
 
         {/* Search Bar */}
         <div className="search-container">
-          <input
-            type="text"
-            placeholder="Search..."
-            value={searchQuery}
-            onChange={handleSearchChange}
-            className="search-bar"
-          />
+          <form onSubmit={(e) => e.preventDefault()}>
+            <input
+              type="text"
+              placeholder="Search..."
+              value={searchQuery}
+              onChange={handleSearchChange}
+              className="search-bar"
+              aria-label="Search"
+            />
+          </form>
         </div>
       </div>
     </header>

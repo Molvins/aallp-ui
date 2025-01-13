@@ -36,8 +36,9 @@ body {
 }
 
 .logo {
-  max-width: 120px; /* Adjusted logo size for smaller header */
+  max-width: 120px; /* Adjust logo size for smaller header */
   height: auto;
+  width: auto; /* Ensure the logo scales correctly */
 }
 
 .hamburger-icon {
@@ -136,7 +137,8 @@ body {
   }
 
   .logo {
-    max-width: 120px;
+    max-width: 100px; /* Adjust logo size for mobile */
+    height: auto;
   }
 
   .about-container, .services-list {
@@ -148,6 +150,7 @@ body {
 body {
   padding-top: 60px; /* Adjust based on header height */
 }
+
 
 
 .team-container {

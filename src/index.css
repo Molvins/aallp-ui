@@ -22,15 +22,14 @@ html, body {
 .header {
   margin: 0;
 }
-/* Prevent Overflow */
-body, html {
+/* General Reset */
+body, ul, nav {
   margin: 0;
   padding: 0;
-  width: 100%;
-  overflow-x: hidden; /* Prevent horizontal scrolling */
+  box-sizing: border-box;
 }
 
-/* Header Styling */
+/* Fixed Header */
 .header {
   position: fixed;
   top: 0;
@@ -43,87 +42,121 @@ body, html {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
-/* Header Container - Adjusting Flex Layout */
 .header-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  position: relative;
-  padding: 0 20px; /* Ensure space within the header */
-  box-sizing: border-box; /* Ensure padding doesn't affect width */
+  position: relative; 
+
 }
 
-/* Hamburger Icon Styling */
+.logo {
+  max-width: 150px;
+  height: auto;
+}
+
+.hamburger-icon {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: white;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-evenly;
+  flex-grow: 1;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  text-align: center;
+}
+
+.nav-link:hover {
+  background-color: #575757;
+  border-radius: 4px;
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-bar {
+  padding: 8px 10px;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+  outline: none;
+  width: 200px;
+}
+
+.search-bar:focus {
+  border: 2px solid #007bff;
+}
+
+/* Ensure Content Doesn't Overlap Header */
+body {
+  padding-top: 60px; /* Adjust to header height */
+}
+
+/* Small Screens */
+@media (max-width: 768px) {
+ /* Hamburger Icon Styling */
 .hamburger-icon {
   display: block;
-  font-size: 30px;
+  font-size: 30px; 
   cursor: pointer;
   color: white;
   z-index: 2000;
   position: absolute;
   right: 20px;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 50%; 
+  transform: translateY(-50%); 
 }
 
-/* Navigation Drawer (Hamburger Menu) */
-.nav {
-  position: fixed;
-  top: 0;
-  left: -100%;
-  width: 70%; /* Restrict width to avoid overflow */
-  height: 100%;
-  background-color: #222;
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-  transition: left 0.3s ease;
-  z-index: 1000;
-}
-
-/* Open Navigation Drawer */
-.nav-active {
-  left: 0;
-}
-
-/* Navigation Links */
-.nav-link {
-  color: white;
-  text-decoration: none;
-  padding: 15px;
-  text-align: left;
-}
-
-.nav-link:hover {
-  background-color: #575757;
-}
-
-/* Ensure content doesn't overlap header */
-body {
-  padding-top: 60px; /* Adjust according to header height */
-}
-
-/* Media Queries for Smaller Screens */
-@media (max-width: 768px) {
-  .hamburger-icon {
-    display: block;
-  }
 
   .nav {
-    left: -100%; /* Ensure it's off-screen initially */
-    width: 80%; /* Adjust width of navigation drawer */
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 70%;
+    height: 100%;
+    background-color: #222;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: flex-start;
+    padding: 20px;
+    transition: left 0.3s ease;
   }
 
   .nav-active {
     left: 0;
   }
 
+  .nav-link {
+    width: 100%;
+    padding: 15px;
+    text-align: left;
+    color: white;
+    border-bottom: 1px solid #444;
+  }
+
+  .nav-link:hover {
+    background-color: #575757;
+  }
+
   .search-container {
-    display: none; /* Hide search bar on small screens */
+    display: none;
   }
 }
-
 
 
 /* General team container styles */

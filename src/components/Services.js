@@ -1,4 +1,5 @@
 import React from "react";
+import Header from './Header';
 import CorporateImage from "../images/corporate.jpg";
 import FamilyImage from "../images/family.jpg";
 import EstatePlanningImage from "../images/estate planning.jpg";
@@ -26,6 +27,9 @@ const servicesData = [
 
 const Services = () => {
   return (
+    <div className="app-container">
+    <Header />
+    
     <section id="services" className="services-container">
       <h2 className="section-heading">Our Services</h2>
       <div className="services-list">
@@ -42,6 +46,7 @@ const Services = () => {
         ))}
       </div>
     </section>
+    </div>
   );
 };
 

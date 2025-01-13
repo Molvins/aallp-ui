@@ -2,8 +2,6 @@ import React from 'react';
 import Header from './Header';
 import Team from './Team'
 import About from './About'
-
-import Contact from './Contact';
 import Footer from './Footer';
 
 

@@ -4,6 +4,9 @@ import { Link as ScrollLink } from 'react-scroll';
 
 const Blog = () => {
   return (
+    <div className="app-container">
+    <Header />
+
     <section id="blog" className="blog-container">
       {/* <h2 className="section-heading">Our Blog</h2> */}
       <div className="blog-post">
@@ -51,7 +54,9 @@ const Blog = () => {
         </div>
       </div>
     </section>
+    </div>
   );
+
 };
 
 export default Blog;
